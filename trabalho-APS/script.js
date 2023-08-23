@@ -1,12 +1,12 @@
-var btn = document.querySelector('#back-to-top')
-btn.addEventListener('click', function () {
-  window.scrollTo(0, 0)
-})
+const btn = document.querySelector("#back-to-top");
+btn.addEventListener("click", () => {
+  window.scrollTo(0, 0);
+});
 
 ScrollReveal({
-  origin: 'bottom',
-  distance: '40px',
-  duration: 700
+  origin: "bottom",
+  distance: "40px",
+  duration: 700,
 }).reveal(`
   #cultura,
   .imagem,
@@ -28,21 +28,22 @@ ScrollReveal({
   #contatos,
   .zap,
   #integrantes,
-  .unip`)
+  .unip`);
 
-const header = document.querySelector('#page-header')
-const headerClassList = header.classList
-const btnClassList = btn.classList
-window.addEventListener('scroll', () => {
+const header = document.querySelector("#page-header");
+const headerClassList = header.classList;
+const btnClassList = btn.classList;
+
+window.addEventListener("scroll", () => {
   if (window.scrollY >= 80) {
-    if (!headerClassList.contains('scrollHide')) {
-      headerClassList.add('scrollHide')
-      btnClassList.remove('hide')
+    if (!headerClassList.contains("scrollHide")) {
+      headerClassList.add("scrollHide");
     }
+    btnClassList.remove("hide");
   } else {
-    if (headerClassList.contains('scrollHide')) {
-      headerClassList.remove('scrollHide')
+    if (headerClassList.contains("scrollHide")) {
+      headerClassList.remove("scrollHide");
     }
-    btnClassList.add('hide')
+    btnClassList.add("hide");
   }
-})
+});

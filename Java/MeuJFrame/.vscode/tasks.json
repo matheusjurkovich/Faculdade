@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "compile",
+      "type": "shell",
+      "command": "javac",
+      "args": ["-d", "bin", "${file}"],
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "type": "java (buildArtifact)",
+      "mainClass": "MeuJFrame",
+      "targetPath": "${workspaceFolder}/${workspaceFolderBasename}.jar",
+      "elements": ["${compileOutput}", "${dependencies}"],
+      "problemMatcher": [],
+      "label": "java (buildArtifact): MeuJFrame",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
