@@ -18,7 +18,7 @@ public class Principal extends Win {
     JTextField nome = new JTextField(30);
     JTextField cidade = new JTextField("São José do Rio Preto", 30);
     JPasswordField senha = new JPasswordField(30);
-    JComboBox ufs = new JComboBox(new String[] { "SP", "RJ", "MG" });
+    JComboBox<String> ufs = new JComboBox<>(new String[] { "SP", "RJ", "MG" });
     JCheckBox robot = new JCheckBox("Não sou um robô");
     JRadioButton masculino = new JRadioButton("Masculino", true);
     JRadioButton feminino = new JRadioButton("Feminino");
