@@ -14,11 +14,16 @@ public class Principal extends Win {
 
   @Override
   protected void setupComponents() {
-    setLayout(null);
+    setLayout(null); // Precisa ser null para posicionar os componentes
+    // Componentes
     JTextField nome = new JTextField(30);
     JTextField cidade = new JTextField("São José do Rio Preto", 30);
     JPasswordField senha = new JPasswordField(30);
-    JComboBox<String> ufs = new JComboBox<>(new String[] { "SP", "RJ", "MG" });
+    JComboBox<String> ufs = new JComboBox<>(new String[] {
+        "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
+        "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
+        "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+    });
     JCheckBox robot = new JCheckBox("Não sou um robô");
     JRadioButton masculino = new JRadioButton("Masculino", true);
     JRadioButton feminino = new JRadioButton("Feminino");
@@ -27,6 +32,7 @@ public class Principal extends Win {
     sexo.add(feminino);
     JButton help = new JButton("Me ajude");
 
+    // Posicionamento
     nome.setLocation(10, 10);
     nome.setSize(nome.getPreferredSize());
     cidade.setLocation(10, 40);
@@ -44,6 +50,7 @@ public class Principal extends Win {
     help.setLocation(10, 220);
     help.setSize(help.getPreferredSize());
 
+    // Adicionando componentes em tela
     add(nome);
     add(cidade);
     add(senha);
