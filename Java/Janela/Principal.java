@@ -1,63 +1,46 @@
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JComboBox;
-import javax.swing.JCheckBox;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
+import javax.swing.*;
 
+// Classe Principal que estende a classe abstrata Win
 public class Principal extends Win {
+  // Construtor da classe Principal
   public Principal(int x, int y) {
-    super("Principal", x, y, 400, 400, JFrame.EXIT_ON_CLOSE);
+    // Chama o construtor da superclasse Win para configurar a janela
+    super("Principal", x, y, 300, 200, JFrame.EXIT_ON_CLOSE);
   }
 
+  // Método override para configurar os componentes da janela
   @Override
   protected void setupComponents() {
-    setLayout(null); // Precisa ser null para posicionar os componentes
-    // Componentes
-    JTextField nome = new JTextField(30);
-    JTextField cidade = new JTextField("São José do Rio Preto", 30);
-    JPasswordField senha = new JPasswordField(30);
-    JComboBox<String> ufs = new JComboBox<>(new String[] {
-        "AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
-        "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-        "RS", "RO", "RR", "SC", "SP", "SE", "TO"
+    // Define o layout da janela como null (layout personalizado)
+    setLayout(null);
+
+    // Cria um rótulo (label) com o texto "Clique no botão para abrir o cadastro"
+    JLabel label = new JLabel("Clique no botão para abrir o cadastro");
+
+    // Cria um botão com o texto "Cadastrar"
+    JButton button = new JButton("Cadastrar");
+
+    // Define a posição e o tamanho do rótulo e do botão
+    label.setLocation(10, 10);
+    label.setSize(label.getPreferredSize());
+
+    button.setLocation(10, 40);
+    button.setSize(button.getPreferredSize());
+
+    // Adiciona o rótulo e o botão à janela
+    add(label);
+    add(button);
+
+    // Adiciona um ouvinte de ação ao botão
+    button.addActionListener(e -> {
+      // Quando o botão é clicado, cria uma instância da classe Pessoa
+      Pessoa pessoa = new Pessoa(100, 100);
+
+      // Torna a janela Pessoa visível
+      pessoa.setVisible(true);
+
+      // Centraliza a janela Pessoa na tela
+      pessoa.goToCenter();
     });
-    JCheckBox robot = new JCheckBox("Não sou um robô");
-    JRadioButton masculino = new JRadioButton("Masculino", true);
-    JRadioButton feminino = new JRadioButton("Feminino");
-    ButtonGroup sexo = new ButtonGroup();
-    sexo.add(masculino);
-    sexo.add(feminino);
-    JButton help = new JButton("Me ajude");
-
-    // Posicionamento
-    nome.setLocation(10, 10);
-    nome.setSize(nome.getPreferredSize());
-    cidade.setLocation(10, 40);
-    cidade.setSize(cidade.getPreferredSize());
-    senha.setLocation(10, 70);
-    senha.setSize(senha.getPreferredSize());
-    ufs.setLocation(10, 100);
-    ufs.setSize(ufs.getPreferredSize());
-    robot.setLocation(10, 130);
-    robot.setSize(robot.getPreferredSize());
-    masculino.setLocation(10, 160);
-    masculino.setSize(masculino.getPreferredSize());
-    feminino.setLocation(10, 190);
-    feminino.setSize(feminino.getPreferredSize());
-    help.setLocation(10, 220);
-    help.setSize(help.getPreferredSize());
-
-    // Adicionando componentes em tela
-    add(nome);
-    add(cidade);
-    add(senha);
-    add(ufs);
-    add(robot);
-    add(masculino);
-    add(feminino);
-    add(help);
   }
 }
