@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.Desktop;
-import java.net.URI;
 
 // Classe Pessoa que estende a classe abstrata Win
 public class Pessoa extends Win {
@@ -63,30 +61,14 @@ public class Pessoa extends Win {
 
     // Adiciona um ouvinte de ação ao botão "Me ajude"
     help.addActionListener(e -> {
-      // Exibe uma mensagem de diálogo com uma mensagem informativa
-      JOptionPane.showMessageDialog(null, "Acesse o site para mais informações");
+      JOptionPane.showMessageDialog(null, "uili", "uili", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "uilov", "uilov", JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "uilai", "uilai", JOptionPane.INFORMATION_MESSAGE);
+      IndoAli IndoAli = new IndoAli(100, 100);
 
-      // Define a URL que será aberta ao clicar no botão "Me ajude"
-      String url = "https://docs.oracle.com/en/java/";
+      IndoAli.setVisible(true);
 
-      try {
-        // Cria uma instância de URI com a URL
-        URI uri = new URI(url);
-
-        // Obtém o ambiente de desktop atual
-        Desktop desktop = Desktop.getDesktop();
-
-        // Verifica se a ação de abrir o navegador é suportada no sistema
-        if (desktop.isSupported(Desktop.Action.BROWSE)) {
-          // Abre o navegador padrão com a URL especificada
-          desktop.browse(uri);
-        } else {
-          System.out.println("A abertura do navegador não é suportada neste sistema.");
-        }
-      } catch (Exception ex) {
-        // Lida com exceções, se ocorrerem
-        ex.printStackTrace();
-      }
+      IndoAli.goToCenter();
     });
   }
 }
