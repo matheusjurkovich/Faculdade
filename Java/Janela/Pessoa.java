@@ -29,7 +29,7 @@ public class Pessoa extends Win {
     ButtonGroup sexo = new ButtonGroup();
     sexo.add(masculino);
     sexo.add(feminino);
-    JButton help = new JButton("Me ajude");
+    JButton help = new JButton("Ir Ali -->");
 
     // Define a posição e o tamanho dos componentes
     nome.setLocation(10, 10);
@@ -61,14 +61,17 @@ public class Pessoa extends Win {
 
     // Adiciona um ouvinte de ação ao botão "Me ajude"
     help.addActionListener(e -> {
-      JOptionPane.showMessageDialog(null, "uili", "uili", JOptionPane.INFORMATION_MESSAGE);
-      JOptionPane.showMessageDialog(null, "uilov", "uilov", JOptionPane.INFORMATION_MESSAGE);
-      JOptionPane.showMessageDialog(null, "uilai", "uilai", JOptionPane.INFORMATION_MESSAGE);
-      IndoAli IndoAli = new IndoAli(100, 100);
+      JOptionPane.showMessageDialog(null, "uili", "uili",
+          JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "uilov", "uilov",
+          JOptionPane.INFORMATION_MESSAGE);
+      JOptionPane.showMessageDialog(null, "uilai", "uilai",
+          JOptionPane.INFORMATION_MESSAGE);
+      IndoAli indoAli = new IndoAli(1, 1);
 
-      IndoAli.setVisible(true);
+      indoAli.setVisible(true);
 
-      IndoAli.goToCenter();
+      indoAli.goToCenter();
     });
   }
 }

@@ -1,14 +1,12 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class IndoAli extends Win {
 
     public IndoAli(int x, int y) {
-        // Chama o construtor da superclasse Win para configurar a janela
         super("Indo Ali", x, y, 1000, 700, JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -19,7 +17,7 @@ public class IndoAli extends Win {
             // Carrega a imagem
             InputStream inputStream = IndoAli.class.getResourceAsStream("/indo_ali.jpeg");
             BufferedImage bufferedImage = ImageIO.read(inputStream);
-            Image image = bufferedImage.getScaledInstance(1000, 700, Image.SCALE_SMOOTH);
+            Image image = bufferedImage.getScaledInstance(1360, 768, Image.SCALE_SMOOTH);
 
             // Cria um JLabel para exibir a imagem
             JLabel label = new JLabel(new ImageIcon(image));
