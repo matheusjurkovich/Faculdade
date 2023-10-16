@@ -5,7 +5,7 @@ public class Cliente {
   public static void main(String[] args) {
     try {
       Socket socket = new Socket("192.168.1.95", 12345); // Usando o endereço IP local para se conectar ao servidor na
-      // mesma máquina
+      // 127.0.0.1 mesma máquina
 
       // Fluxo de entrada para o servidor
       BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
